@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  --radius: 100%;
+  --page-left-right-margins-for-1281px: calc(((100% - 70px) * 0.16) + 70px);
+  --primary-color-1: #495E57;
+  --primary-color-2: #F4CE14;
+  --secondary-color-1: #EE9972;
+  --secondary-color-2: #FBDABB;
+  --highlight-colors-1: #EDEFEE;
+  --highlight-colors-2: #333333;
+}
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */}

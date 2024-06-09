@@ -1,5 +1,4 @@
-
-import './App.css';
+import './assets/styles/Nav.css';
 import Logo from './assets/images/logo-nav.png'
 
 function Nav() {

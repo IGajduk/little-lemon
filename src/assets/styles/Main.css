@@ -1,0 +1,228 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+#testimonials {
+  background-color: var(--primary-color-1);
+}
+
+
+#specials {
+  display: grid;
+  grid-template-areas:
+  'specials_title specials_title specials_button'
+  'article_1 article_2 article_3';
+  grid-column-gap: 20px;
+  grid-row-gap: 46px;
+  padding-top: 25px;
+  margin-bottom: 73px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.section-title {
+  grid-area: specials_title;
+}
+.section-menu-button {
+  grid-area: specials_button;
+}
+
+#specials item-1 {
+  grid-area: article_1;
+}
+#specials item-2 {
+  grid-area: article_2;
+}
+#specials item-3 {
+  grid-area: article_3;
+}
+
+.product-item {
+  display: grid;
+  grid-template-areas:
+  'photo photo'
+  'title price'
+  'description description'
+  'action action';
+  background-color: var(--highlight-colors-1);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.product-item .product-photo {
+  grid-area: photo;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 269px;
+}
+.product-item .product-photo img {
+  height: 100%;
+}
+
+.product-item .product-title {
+  grid-area: title;
+}
+
+.product-item .product-price {
+  grid-area: price;
+  text-align: right;
+}
+
+.product-item .product-description {
+  grid-area: description;
+}
+
+.product-item .product-action {
+  grid-area: action;
+}
+
+
+#testimonials {
+  display: grid;
+  grid-template-areas:
+  'section-title section-title section-title section-title'
+  'review-item-1 review-item-2 review-item-3 review-item-4';
+  grid-column-gap: 20px;
+  padding-top: 120px;
+  padding-bottom: 180px;
+}
+
+#testimonials > .section-title {
+  grid-area: section-title;
+  text-align: center;
+}
+#testimonials > .review-1 {
+  grid-area: review-item-1;
+}
+
+#testimonials > .review-2 {
+  grid-area: review-item-2;
+}
+
+#testimonials > .review-3 {
+  grid-area: review-item-3;
+}
+
+#testimonials > .review-4 {
+  grid-area: review-item-4;
+}
+
+#testimonials > .review-item {
+  display: grid;
+  grid-template-areas:
+  'review-title stars-icon-block'
+  'person-photo-block person-name'
+  'person-photo-block review-date'
+  'review-text review-text'
+  ;
+  background-color: var(--highlight-colors-1);
+}
+
+.review-item > .review-title {
+  grid-area: review-title;
+}
+.review-item > .stars-icon-block {
+  grid-area: stars-icon-block;
+  width: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.review-item > .stars-icon-block > img {
+  width: 100%;
+}
+.review-item > .person-photo-block {
+  grid-area: person-photo-block;
+  width: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.review-item > .person-photo-block > img {
+  width: 100%;
+}
+.review-item > .person-name {
+  grid-area: person-name;
+}
+.review-item > .review-date {
+  grid-area: review-date;
+}
+.review-item > .review-text {
+  grid-area: review-text;
+}
+
+#about-restaurant {
+  display: grid;
+  grid-template-areas:
+  'section-title section-pictures'
+  'section-subtitle  section-pictures'
+  'section-text  section-pictures';
+  grid-column-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 120px;
+  padding-bottom: 180px;
+  width: calc(100% - (var(--page-left-right-margins-for-1281px) * 2));
+}
+
+#about-restaurant > .section-title {
+  grid-area: section-title;
+}
+#about-restaurant > .section-subtitle {
+  grid-area: section-subtitle;
+}
+#about-restaurant > .section-text {
+  grid-area: section-text;
+}
+#about-restaurant > .pictures {
+  grid-area: section-pictures;
+  overflow: hidden;
+  height: 447px;
+  position: relative;
+}
+
+#about-restaurant .picture-1 {
+  height: 338px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#about-restaurant .picture-2 {
+  height: 338px;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#about-restaurant .picture-1 > img ,
+#about-restaurant .picture-2 > img {
+  height: 100%;
+}
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */
+    main section {
+        padding: 0 var(--page-left-right-margins-for-1281px) 0;
+    }
+} 

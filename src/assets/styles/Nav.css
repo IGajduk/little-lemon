@@ -1,0 +1,22 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 10px;
+    margin: 0 var(--page-left-right-margins-for-1281px);
+}
+
+nav img {
+    width: 220px;
+    height: 70px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+li {
+    list-style-type: none;
+}
