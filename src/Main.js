@@ -1,5 +1,8 @@
 
 import './assets/styles/Main.css';
+import './assets/styles/Main_section/About.css';
+import './assets/styles/Main_section/Specials.css';
+import './assets/styles/Main_section/Testimonials.css';
 import greekSaladPicture from './assets/images/greek salad.jpg';
 import motocycleSVG from './assets/images/moto-cycle.svg';
 import bruschettaPicture from './assets/images/bruchetta.svg';
@@ -16,109 +19,111 @@ function Main() {
     <>
       <main>
         <section id="specials">
-          <h2 class="section-title">
+          <h2 className="section-title">
             This week specials!
           </h2>
-          <button class="section-menu-button">Online menu</button>
-          <article class="product-item item-1">
-            <div class="product-photo">
+          <button className="section-menu-button action-button">Online menu</button>
+          <article className="product-item item-1">
+            <div className="product-photo">
               <img src={greekSaladPicture} alt="greek salad picture"/>
             </div>
-            <h3 class="product-title">Greek salad</h3>
-            <div class="product-price">$12.99</div>
-            <p class="product-description">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. </p>
-            <a class="action">Order a delivery <img src={motocycleSVG}/></a>
+            <h3 className="product-title">Greek salad</h3>
+            <div className="product-price">$12.99</div>
+            <p className="product-description">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. </p>
+            <a className="action">Order a delivery <img src={motocycleSVG}/></a>
           </article>
-          <article class="product-item item-2">
-            <div class="product-photo">
+          <article className="product-item item-2">
+            <div className="product-photo">
               <img src={bruschettaPicture} alt="greek salad picture"/>
             </div>
-            <h3 class="product-title">Bruchetta</h3>
-            <div class="product-price">$5.99</div>
-            <p class="product-description">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.  </p>
-            <a class="action">Order a delivery <img src={motocycleSVG}/></a>
+            <h3 className="product-title">Bruchetta</h3>
+            <div className="product-price">$5.99</div>
+            <p className="product-description">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.  </p>
+            <a className="action">Order a delivery <img src={motocycleSVG}/></a>
           </article>
-          <article class="product-item item-3">
-            <div class="product-photo">
+          <article className="product-item item-3">
+            <div className="product-photo">
               <img src={lemonDesertPicture} alt="lemon Desert Picture"/>
             </div>
-            <h3 class="product-title">Lemon Dessert</h3>
-            <div class="product-price">$5.00</div>
-            <p class="product-description">This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
-            <a class="action">Order a delivery <img src={motocycleSVG}/></a>
+            <h3 className="product-title">Lemon Dessert</h3>
+            <div className="product-price">$5.00</div>
+            <p className="product-description">This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
+            <a className="action">Order a delivery <img src={motocycleSVG}/></a>
           </article>
         </section>
         <section id="testimonials">
-          <h2 class="section-title">Testimonials</h2>
-          <article class="review-item review-1">
-            <h4 class="review-title">Rating 5.0 </h4>
-            <div class="stars-icon-block">
+          <h2 className="section-title">Testimonials</h2>
+          <article className="review-item review-1">
+            <h4 className="review-title">Rating 5.0 </h4>
+            <div className="stars-icon-block">
               <img src={starIcon} alt="star icon"/>
             </div>
-            <div class="person-photo-block">
+            <div className="person-photo-block">
               <img src={ladyPhoto} alt="person picture"/>
             </div>
-            <h5 class="person-name">Raychel</h5>
-            <div class="review-date">2 months ago</div>
-            <p class="review-text">
+            <h5 className="person-name">Raychel</h5>
+            <div className="review-date">2 months ago</div>
+            <p className="review-text">
                Cozy atmosphere perfect for a night out.
             </p>
           </article>
-          <article class="review-item review-2">
-            <h4 class="review-title">Rating 5.0 </h4>
-            <div class="stars-icon-block">
+          <article className="review-item review-2">
+            <h4 className="review-title">Rating 5.0 </h4>
+            <div className="stars-icon-block">
               <img src={starIcon} alt="star icon"/>
             </div>
-            <div class="person-photo-block">
+            <div className="person-photo-block">
               <img src={teenagerPhoto} alt="person picture"/>
             </div>
-            <h5 class="person-name">Hao</h5>
-            <div class="review-date">3 weeks ago</div>
-            <p class="review-text">
+            <h5 className="person-name">Hao</h5>
+            <div className="review-date">3 weeks ago</div>
+            <p className="review-text">
               Loved the pasta and the vibe!
             </p>
           </article>
-          <article class="review-item review-3">
-            <h4 class="review-title">Rating 5.0 </h4>
-            <div class="stars-icon-block">
+          <article className="review-item review-3">
+            <h4 className="review-title">Rating 5.0 </h4>
+            <div className="stars-icon-block">
               <img src={starIcon} alt="star icon"/>
             </div>
-            <div class="person-photo-block">
+            <div className="person-photo-block">
               <img src={mamPhoto} alt="person picture"/>
             </div>
-            <h5 class="person-name">Nana</h5>
-            <div class="review-date">1 week ago</div>
-            <p class="review-text">
+            <h5 className="person-name">Nana</h5>
+            <div className="review-date">1 week ago</div>
+            <p className="review-text">
               I adore the friendly service.
             </p>
           </article>
-          <article class="review-item review-4">
-            <h4 class="review-title">Rating 5.0 </h4>
-            <div class="stars-icon-block">
+          <article className="review-item review-4">
+            <h4 className="review-title">Rating 5.0 </h4>
+            <div className="stars-icon-block">
               <img src={starIcon} alt="star icon"/>
             </div>
-            <div class="person-photo-block">
+            <div className="person-photo-block">
               <img src={youngManPhoto} alt="person picture"/>
             </div>
-            <h5 class="person-name">Jose</h5>
-            <div class="review-date">yesterday</div>
-            <p class="review-text">
+            <h5 className="person-name">Jose</h5>
+            <div className="review-date">yesterday</div>
+            <p className="review-text">
               Staff are very welcoming.
             </p>
           </article>
         </section>
         <section id="about-restaurant">
-          <h1 class="section-title">Little Lemon</h1>
-          <h3 class="section-subtitle">Chicago</h3>
-          <p class="section-text">
+          <h1 className="section-title">
+            Little Lemon
+          </h1>
+          <h3 className="section-subtitle">Chicago</h3>
+          <p className="section-text">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 
           </p>
-          <div class="pictures">
-            <div class="picture-1">
+          <div className="pictures">
+            <div className="picture-1">
               <img src={MarioAndAdrian} alt="Photo of Adrian and Marion"/>
             </div>
-            <div class="picture-2">
+            <div className="picture-2">
               <img src={SummerTerrace} alt="Photo of our Summer Terrace"/>
             </div>
           </div>

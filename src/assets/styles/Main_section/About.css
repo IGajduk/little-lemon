@@ -1,0 +1,107 @@
+
+#about-restaurant {
+    display: grid;
+    padding-top: 120px;
+    padding-bottom: 180px;
+    box-sizing: border-box;
+  }
+  
+  #about-restaurant > .section-title {
+    grid-area: section-title;
+    color: var(--highlight-colors-2);
+    font-size: var(--page-title-font-size);
+    font-weight: 400;
+    height: 64px;
+  }
+  #about-restaurant > .section-subtitle {
+    grid-area: section-subtitle;
+    color: var(--highlight-colors-2);
+    font-size: var(--page-subtitle-font-size);
+    font-weight: 400;
+    height: 64px;
+  }
+  #about-restaurant > .section-text {
+    grid-area: section-text;
+    font-family: 'Karla';
+    font-size: 20px;
+    font-weight: 600;
+  }
+  #about-restaurant > .pictures {
+    grid-area: section-pictures;
+    overflow: hidden;
+    height: 447px;
+    position: relative;
+  }
+  
+  #about-restaurant .picture-1 {
+    height: 338px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+  
+  #about-restaurant .picture-2 {
+    height: 338px;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  #about-restaurant .picture-1 > img ,
+  #about-restaurant .picture-2 > img {
+    height: 100%;
+  }
+
+  @media (min-width:320px)  {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    #about-restaurant {
+      width: 100%;
+      grid-template-areas:
+      'section-title'
+      'section-subtitle'
+      'section-pictures'
+      'section-text';
+      /* padding-left: 16px;
+      padding-right: 16px; */
+    }
+    #about-restaurant > .section-text {
+      margin-top: 40px;
+    }
+  }
+  @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+  @media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+  @media (min-width:801px)  {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    #about-restaurant {
+      grid-template-areas:
+      'section-title section-pictures'
+      'section-subtitle  section-pictures'
+      'section-text  section-pictures';
+      grid-column-gap: 82px;
+      grid-row-gap:0;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.4fr 0.5fr 2fr;
+      width: calc(100% -(var(--page-left-right-margins-for-1281px)* 2));
+    }
+    #about-restaurant > .section-text {
+        margin: auto;
+    }
+   }
+  @media (min-width:1025px) {
+     /* big landscape tablets, laptops, and desktops */
+  }
+  @media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+  }
+  

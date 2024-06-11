@@ -6,21 +6,18 @@ function Header() {
   return (
     <>
       <header>
-        <article id="header-content">
-          <section id="header-info">
-            <h1>Little Lemon</h1>
-            <h3>Chicago</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          <h1 className='page-title'>Little Lemon</h1>
+          <h3 className='subtitle'>Chicago</h3>
+          <p className='header-text'>
+            We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
             </p>
-            <button>
-              Reserve a table
-            </button>
-          </section>
+          <button className='action-button'>
+            Reserve a table
+          </button>
+          <div className='empty-block'></div>
           <section id="header-photo-block">
-            <img src={HeaderPicture} alt="Photo of bruskets"/>
+            <img src={HeaderPicture} alt="Photo of attractive bruskets on the black board"/>
           </section>
-        </article>
       </header>
     </>
   );

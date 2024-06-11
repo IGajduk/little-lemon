@@ -1,0 +1,116 @@
+
+#testimonials {
+    background-color: var(--primary-color-1);
+  }
+  
+
+#testimonials {
+    display: grid;
+    padding-top: 120px;
+    padding-bottom: 180px;
+  }
+  
+  #testimonials > .section-title {
+    grid-area: section-title;
+    text-align: center;
+    color: var(--highlight-colors-1);
+    font-size: var(--page-title-font-size);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  #testimonials > .review-1 {
+    grid-area: review-item-1;
+  }
+  
+  #testimonials > .review-2 {
+    grid-area: review-item-2;
+  }
+  
+  #testimonials > .review-3 {
+    grid-area: review-item-3;
+  }
+  
+  #testimonials > .review-4 {
+    grid-area: review-item-4;
+  }
+  
+  #testimonials > .review-item {
+    display: grid;
+    grid-template-areas:
+    'review-title stars-icon-block'
+    'person-photo-block person-name'
+    'person-photo-block review-date'
+    'review-text review-text'
+    ;
+    background-color: var(--highlight-colors-1);
+  }
+
+  .review-item > .review-title {
+    grid-area: review-title;
+  }
+  .review-item > .stars-icon-block {
+    grid-area: stars-icon-block;
+    width: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .review-item > .stars-icon-block > img {
+    width: 100%;
+  }
+  .review-item > .person-photo-block {
+    grid-area: person-photo-block;
+    width: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .review-item > .person-photo-block > img {
+    width: 100%;
+  }
+  .review-item > .person-name {
+    grid-area: person-name;
+  }
+  .review-item > .review-date {
+    grid-area: review-date;
+  }
+  .review-item > .review-text {
+    grid-area: review-text;
+  }
+
+  @media (min-width:320px)  {
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+    #testimonials {
+      grid-template-areas:
+        'section-title'
+        'review-item-1'
+        'review-item-2'
+        'review-item-3'
+        'review-item-4';
+      grid-column-gap: 20px;
+      row-gap: 10px;
+    }
+    #testimonials .review-item {
+      padding: 5px;
+    }
+  }
+  @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+  @media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+  @media (min-width:801px)  {
+   
+    #testimonials {
+      grid-template-areas:
+      'section-title section-title section-title section-title'
+      'review-item-1 review-item-2 review-item-3 review-item-4';
+      grid-column-gap: 20px;
+    }
+   }
+  @media (min-width:1025px) {
+     /* big landscape tablets, laptops, and desktops */
+  }
+  @media (min-width:1281px) { /* hi-res laptops and desktops */
+  }
+  

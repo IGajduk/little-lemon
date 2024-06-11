@@ -1,4 +1,6 @@
 
+
+import './assets/styles/Footer.css';
 import Logo from './assets/images/logo-footer.png';
 
 function Footer() {
@@ -16,7 +18,7 @@ function Footer() {
           <li><a href='/' role='navigation'>Login</a></li>
         </ul>
         <ul>
-          <li><b>Doormat Navigation</b></li>
+          <li><b>Contact</b></li>
           <li><a href='/' role='navigation'>Email</a></li>
           <li><a href='/' role='navigation'>Phone number</a></li>
           <li><a href='/' role='navigation'>Address</a></li>
@@ -28,6 +30,7 @@ function Footer() {
           <li><a href='/' role='navigation'>Facebook</a></li>
 
         </ul>
+        <p>Fonts used on this website are licensed under the <a href="https://openfontlicense.org/open-font-license-official-text/" target="_blank">Open Font License</a>.</p>
       </footer>
     </>
   );

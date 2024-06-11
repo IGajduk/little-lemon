@@ -1,12 +1,33 @@
+
+@font-face {
+  font-family: 'Markazi Text';
+  src: url('./assets/fonts/Markazi_Text/MarkaziText-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url('./assets/fonts/Karla/Karla-VariableFont_wght.ttf') format('truetype');
+}
+/* @font-face {
+  font-family: 'Markazi Text';
+  src: url('../assets/fonts/MarkaziText-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+} */
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: 'Markazi Text', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -20,6 +41,28 @@ code {
   --secondary-color-2: #FBDABB;
   --highlight-colors-1: #EDEFEE;
   --highlight-colors-2: #333333;
+  --page-title-font-size: 64px;
+  --page-subtitle-font-size: 40px;
+}
+
+.action-button {
+  height: 58px;
+  width: 200px;
+  background-color: var(--primary-color-2);
+  font-family: 'Markazi text';
+  font-size: 24px;
+  line-height: 0;
+  color: var(--highlight-colors-2);
+  font-weight: 500;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+
+.empty-block {
+  grid-area: empty;
 }
 
 @media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }

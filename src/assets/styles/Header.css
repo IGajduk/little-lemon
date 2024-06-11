@@ -1,45 +1,140 @@
 header {
-    height: 417px;
     background-color: var(--primary-color-1);
     box-sizing: border-box;
     margin-bottom: 80px;
-}
-
-#header-content {
     display: grid;
 }
 
-/* #header-photo-block {
-    width: 43.7%;
-} */
+#header-photo-block > img {
+    /* width: 100%; */
+    border-radius: 8px;
+}
 
-#header-photo-block {
-    height: 442px;
+header > .page-title {
+    grid-area: title;
+    color: var(--primary-color-2);
+    font-size: var(--page-title-font-size);
+    margin-top: 40px;
+    font-weight: 500;
+}
+header > .subtitle {
+    grid-area: subtitle;
+    color: var(--highlight-colors-1);
+    font-size: var(--page-subtitle-font-size);
+    font-weight: 400;
+}
+header > .header-text {
+    grid-area: text;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
+    color: var(--highlight-colors-1);
+    width: 90%;
+}
+header > .action-button {
+    grid-area: button;
+}
+header > #header-photo-block {
+    grid-area: picture;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-#header-photo-block > img {
-    width: 100%;
-}
 
-#header-info {
-    width: 100%;
-}
+@media (min-width:320px)  {
+    header {
+        grid-template-areas:
+        'title title'
+        'subtitle picture'
+        'text picture'
+        'button picture'
+        ;
+        padding: 0 16px 40px;
+        grid-template-columns: 1fr 125px;
+        grid-template-rows: 110px 40px 200px 60px;
+    }
+    #header-photo-block {
+        margin-left: auto;
+        width: 125px;
+        height: 202px;
+    }
+    #header-photo-block > img {
+        width: 100%;
+    }
 
-@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
-@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  {
+    /* smartphones, Android phones, landscape iPhone */
+    header {
+        
+        grid-template-areas:
+        'title title'
+        'subtitle picture'
+        'text picture'
+        'button picture'
+        ;
+        grid-template-columns: 1fr 230px;
+        grid-template-rows: 110px 60px 200px 60px;
+    }
+    #header-photo-block {
+        margin-left: auto;
+        width: 230px;
+        height: 300px;
+    }
+}
+@media (min-width:600px)  {
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+    header {
+        height: 366px;
+        grid-template-areas:
+        'title picture'
+        'subtitle picture'
+        'text picture'
+        'button picture';
+        grid-template-columns: 1fr 270px;
+        grid-template-rows: 110px 70px 100px 60px;
+    }
+    #header-photo-block {
+        margin-top: 40px;
+        width: 230px;
+        height: 285px;
+    }
+}
+@media (min-width:801px)  {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    header {
+        height: 417px;
+        padding: 25px 10%;
+        grid-template-areas: 'title picture'
+        'subtitle picture'
+        'text picture'
+        'button picture'
+        'empty picture'
+        ;
+        grid-column-gap: 20px;
+        grid-row-gap: 0px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 110px 70px 125px 60px 70px;
+        margin-top: 0;
+    }
+    
+    #header-photo-block > img {
+        height: 100%;
+        width: auto;
+    }
+    #header-photo-block {
+        height: 442px;
+        margin-left: auto;
+        width: auto;
+    }
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+}
+@media (min-width:1281px) {/* hi-res laptops and desktops */
     header {
         padding: 25px var(--page-left-right-margins-for-1281px) 0;
-    }
-    #header-content {
-        grid-template-columns: 40% 40%;
-        grid-column-gap: 20%;
-    }
+     }
 }
