@@ -1,8 +1,8 @@
 
-import './assets/styles/Header.css';
+import './assets/styles/CallToAction.css';
 import HeaderPicture from './assets/images/restauranfood.jpg'
 
-function Header() {
+function CallToAction() {
   return (
     <>
       <header>
@@ -23,4 +23,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default CallToAction;

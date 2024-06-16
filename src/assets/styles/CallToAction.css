@@ -69,7 +69,6 @@ header > #header-photo-block {
 @media (min-width:480px)  {
     /* smartphones, Android phones, landscape iPhone */
     header {
-        
         grid-template-areas:
         'title title'
         'subtitle picture'
@@ -120,7 +119,6 @@ header > #header-photo-block {
         grid-template-rows: 110px 70px 125px 60px 70px;
         margin-top: 0;
     }
-    
     #header-photo-block > img {
         height: 100%;
         width: auto;
@@ -129,6 +127,7 @@ header > #header-photo-block {
         height: 442px;
         margin-left: auto;
         width: auto;
+        margin-top: 0;
     }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */

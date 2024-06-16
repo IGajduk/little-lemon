@@ -4,12 +4,34 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
+    padding-top: 66px;
     padding-bottom: 47px;
+    background-color: #D9D9D9;
 }
 
 
-footer > ul {
-    height: 210px;
+footer a {
+    text-decoration: none;
+}
+
+footer > ul, .font-family-licence {
+    height: 180px;
+    list-style: none;
+    font-family: 'Karla';
+    font-size: 20px;
+    color: #333333;
+}
+footer h6 {
+    margin-bottom: 24px;
+    font-family: 'Karla';
+    font-size: 20px;
+    font-weight: bolder;
+    color: #495E57;
+}
+
+.font-family-licence {
+    color: #3333337e;
+    width: 100%;
 }
 
 @media (min-width:320px)  {
@@ -24,12 +46,19 @@ footer > ul {
 }
 @media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
 @media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:801px)  {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    footer {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 @media (min-width:1281px) {
      /* hi-res laptops and desktops */
     footer {
-        padding: 25px var(--page-left-right-margins-for-1281px) 0;
+        padding-left: var(--page-left-right-margins-for-1281px);
+        padding-right: var(--page-left-right-margins-for-1281px);
     }
     footer > img {
         width: 162px;

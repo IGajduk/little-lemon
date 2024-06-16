@@ -54,9 +54,12 @@ function Main() {
         <section id="testimonials">
           <h2 className="section-title">Testimonials</h2>
           <article className="review-item review-1">
-            <h4 className="review-title">Rating 5.0 </h4>
             <div className="stars-icon-block">
-              <img src={starIcon} alt="star icon"/>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
             </div>
             <div className="person-photo-block">
               <img src={ladyPhoto} alt="person picture"/>
@@ -68,10 +71,6 @@ function Main() {
             </p>
           </article>
           <article className="review-item review-2">
-            <h4 className="review-title">Rating 5.0 </h4>
-            <div className="stars-icon-block">
-              <img src={starIcon} alt="star icon"/>
-            </div>
             <div className="person-photo-block">
               <img src={teenagerPhoto} alt="person picture"/>
             </div>
@@ -80,12 +79,15 @@ function Main() {
             <p className="review-text">
               Loved the pasta and the vibe!
             </p>
+            <div className="stars-icon-block">
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+            </div>
           </article>
           <article className="review-item review-3">
-            <h4 className="review-title">Rating 5.0 </h4>
-            <div className="stars-icon-block">
-              <img src={starIcon} alt="star icon"/>
-            </div>
             <div className="person-photo-block">
               <img src={mamPhoto} alt="person picture"/>
             </div>
@@ -94,12 +96,15 @@ function Main() {
             <p className="review-text">
               I adore the friendly service.
             </p>
+            <div className="stars-icon-block">
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+            </div>
           </article>
           <article className="review-item review-4">
-            <h4 className="review-title">Rating 5.0 </h4>
-            <div className="stars-icon-block">
-              <img src={starIcon} alt="star icon"/>
-            </div>
             <div className="person-photo-block">
               <img src={youngManPhoto} alt="person picture"/>
             </div>
@@ -108,6 +113,13 @@ function Main() {
             <p className="review-text">
               Staff are very welcoming.
             </p>
+            <div className="stars-icon-block">
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+              <i className="star"></i>
+            </div>
           </article>
         </section>
         <section id="about-restaurant">
