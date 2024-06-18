@@ -1,7 +1,7 @@
-import './assets/styles/Nav.css';
-import logo from './assets/images/logo-nav.png'
-import menuIcon from './assets/images/menu.svg'
-import basketIcon from './assets/images/basket .svg'
+import 'src/components/Nav/Nav.css';
+import logo from 'src/assets/images/logo-nav.png'
+import menuIcon from 'src/assets/images/menu.svg'
+import basketIcon from 'src/assets/images/basket .svg'
 
 function Nav() {
   return (

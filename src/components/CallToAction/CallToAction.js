@@ -1,6 +1,7 @@
 
-import './assets/styles/CallToAction.css';
-import HeaderPicture from './assets/images/restauranfood.jpg'
+import 'src/components/CallToAction/CallToAction.css';
+import HeaderPicture from 'src/assets/images/restauranfood.jpg';
+import {Link} from 'react-router-dom';
 
 function CallToAction() {
   return (
@@ -11,9 +12,11 @@ function CallToAction() {
           <p className='header-text'>
             We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
             </p>
-          <button className='action-button'>
-            Reserve a table
-          </button>
+          <Link to="/booking">
+            <button className='action-button'>
+              Reserve a table
+            </button>
+          </Link>
           <div className='empty-block'></div>
           <section id="header-photo-block">
             <img src={HeaderPicture} alt="Photo of attractive bruskets on the black board"/>

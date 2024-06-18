@@ -1,7 +1,7 @@
 
 
-import './assets/styles/Footer.css';
-import Logo from './assets/images/logo-footer.png';
+import 'src/components/Footer/Footer.css';
+import Logo from 'src/assets/images/logo-footer.png';
 
 const Footer = () => (
     <>

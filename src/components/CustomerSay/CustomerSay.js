@@ -1,8 +1,8 @@
-import './assets/styles/Main_section/CustomerSay.css';
-import ladyPhoto from './assets/images/women.jpg';
-import teenagerPhoto from './assets/images/teenager.jpg';
-import mamPhoto from './assets/images/grandmother.jpg';
-import youngManPhoto from './assets/images/young_man.jpg';
+import 'src/components/CustomerSay/CustomerSay.css';
+import ladyPhoto from 'src/assets/images/women.jpg';
+import teenagerPhoto from 'src/assets/images/teenager.jpg';
+import mamPhoto from 'src/assets/images/grandmother.jpg';
+import youngManPhoto from 'src/assets/images/young_man.jpg';
 const CustomerSay = () => (
     <>
       <section id="testimonials">

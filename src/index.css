@@ -25,13 +25,10 @@ body {
   margin: 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  
-}
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 :root {
   --radius: 100%;
   --page-left-right-margins-for-1281px: calc(((100% - 70px) * 0.16) + 70px);
@@ -41,8 +38,10 @@ code {
   --secondary-color-2: #FBDABB;
   --highlight-colors-1: #EDEFEE;
   --highlight-colors-2: #333333;
+  --disabled-color: #D9D9D9;
   --page-title-font-size: 64px;
   --page-subtitle-font-size: 40px;
+  --rounded-corners: 8px;
 }
 
 .action-button {

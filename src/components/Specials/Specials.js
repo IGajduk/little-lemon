@@ -1,9 +1,9 @@
 
-import './assets/styles/Main_section/Specials.css';
-import greekSaladPicture from './assets/images/greek salad.jpg';
-import motocycleSVG from './assets/images/moto-cycle.svg';
-import bruschettaPicture from './assets/images/bruchetta.svg';
-import lemonDesertPicture from './assets/images/lemon dessert.jpg';
+import 'src/components/Specials/Specials.css';
+import greekSaladPicture from 'src/assets/images/greek salad.jpg';
+import motocycleSVG from 'src/assets/images/moto-cycle.svg';
+import bruschettaPicture from 'src/assets/images/bruchetta.svg';
+import lemonDesertPicture from 'src/assets/images/lemon dessert.jpg';
 
 const Specials = () => (
     <>

@@ -72,6 +72,7 @@
       'section-subtitle'
       'section-pictures'
       'section-text';
+      grid-template-rows: 80px 150px 1fr 1fr;
     }
     #about-restaurant > .section-text {
       margin-top: 40px;
@@ -89,7 +90,7 @@
       grid-column-gap: 82px;
       grid-row-gap:0;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 0.4fr 0.5fr 2fr;
+      grid-template-rows: 80px 80px 2fr;
       width: calc(100% -(var(--page-left-right-margins-for-1281px)* 2));
     }
     #about-restaurant > .section-text {

@@ -1,8 +1,8 @@
 
 
-import './assets/styles/Main_section/Chicago.css';
-import MarioAndAdrian from './assets/images/Mario and Adrian A.jpg';
-import SummerTerrace from './assets/images/restaurant.jpg';
+import 'src/components/Chicago/Chicago.css';
+import MarioAndAdrian from 'src/assets/images/Mario and Adrian A.jpg';
+import SummerTerrace from 'src/assets/images/restaurant.jpg';
 
 const Chicago = () => (
     <>
