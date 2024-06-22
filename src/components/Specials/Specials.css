@@ -11,6 +11,7 @@
 
 #specials .section-menu-button {
   grid-area: specials_button;
+  margin: auto 0 auto auto;
 }
 
 #specials item-1 {

@@ -1,0 +1,79 @@
+.text-a-field {
+    all: unset;
+}
+
+.text-a-field {
+    border: 4px solid var(--highlight-colors-1);
+    width: 100%;
+    border-radius: var(--rounded-corners);
+    min-height: 91px;
+    font-size: 20px;
+    font-family: 'Karla';
+    font-weight: bold;
+    color: var(--highlight-colors-1);
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+/* Required State */
+/* text-a-field:required {
+    border-color: orange;
+} */
+
+/* Optional State */
+.text-a-field:optional {
+    border-color: var(--highlight-colors-1);
+}
+
+/* Enabled State */
+.text-a-field:enabled {
+    background-color: white;
+}
+
+
+
+/* Valid State */
+.text-a-field:valid {
+    border-color: var(--primary-color-1);
+    color: var(--primary-color-1);
+}
+
+
+/* Focus State */
+.text-a-field:focus {
+    border-color: var(--primary-color-1);
+    color: var(--primary-color-1);
+    outline: none;
+}
+
+/* Disabled State */
+.text-a-field:disabled {
+    border-color: var(--highlight-colors-1);
+    cursor: not-allowed;
+}
+
+/* Placeholder Text */
+::placeholder { /* Modern browsers */
+    color: var(--highlight-colors-1);
+}
+.text-a-field:-moz-placeholder, /* Firefox 18- */
+.text-a-field::-moz-placeholder, /* Firefox 19+ */
+.text-a-field:-ms-input-placeholder, /* IE 10+ */
+.text-a-field::-webkit-input-placeholder, /* Webkit based */
+.text-a-field::placeholder { /* Modern browsers */
+    color: var(--highlight-colors-1);
+}
+/* .text-a-field:placeholder {
+    font-style: italic;
+} */
+
+/* Invalid State */
+/* .text-a-field:required:invalid {
+    border-color: var(--error-color);
+} */
+
+.text-a-error {
+    color:var(--error-color);
+}
+

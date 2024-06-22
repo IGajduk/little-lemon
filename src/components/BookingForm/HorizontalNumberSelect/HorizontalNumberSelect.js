@@ -7,6 +7,7 @@ const HorizontalNumberSelector = ({
     fieldName,
     amountOfRadioButtons,
     sectionLabel,
+    onBlur,
     disabledOptions = [4, 5, 6]
 }) => {
     const selectionChanges = (e) => {
@@ -21,18 +22,18 @@ const HorizontalNumberSelector = ({
         onChange({target: {value: undefined, name: fieldName}});
     }
         return <label className="r-item" key={'radio' + fieldName + num}>
-            <input type="radio" name={fieldName} checked={isChecked} value={val} onChange={selectionChanges} disabled={isDisabled} />
+            <input type="radio" name={fieldName} onBlur={onBlur} checked={isChecked} value={val} onChange={selectionChanges} disabled={isDisabled} />
             <span className="r-label">{val}</span>
         </label>
     });
 
     return (
         <>
-            <h3 className='section-label'>{sectionLabel}</h3>
+            <label htmlFor={fieldName} className='section-label'>{sectionLabel}</label>
             <ScrollContainer nativeMobileScroll={true} style={{overflow: 'scroll'}}>
-                <div className="horizontal-number-select">
+                <fieldset className="horizontal-number-select">
                     {radioButtons}
-                </div>
+                </fieldset>
             </ScrollContainer>
         </>
     )

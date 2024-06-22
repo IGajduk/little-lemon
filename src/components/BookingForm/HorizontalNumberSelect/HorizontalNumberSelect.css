@@ -29,10 +29,14 @@
     transition: all 0.3s ease;
 }
 
+.horizontal-number-select .r-item:last-child {
+    padding-right: 40px;
+}
+
 .horizontal-number-select .r-item input[type="radio"]:disabled + .r-label {
-    background-color: var(--highlight-colors-1);
-    color: white;
-    border: 2px solid var(--highlight-colors-1);
+    background-color: transparent;
+    color: var(--highlight-colors-1);
+    border: 2px solid transparent;
 }
 
 /* Change the background color and text color when selected */

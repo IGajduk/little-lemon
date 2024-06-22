@@ -1,0 +1,70 @@
+.input-field {
+    all: unset;
+}
+
+.input-field {
+    border: 4px solid var(--highlight-colors-1);
+    width: 100%;
+    border-radius: var(--rounded-corners);
+    height: 51px;
+    font-size: 20px;
+    font-family: 'Karla';
+    font-weight: bold;
+    color: var(--highlight-colors-1);
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* Required State */
+/* .input-field:required {
+    border-color: orange;
+} */
+
+/* Optional State */
+.input-field:optional {
+    border-color: var(--highlight-colors-1);
+}
+
+/* Enabled State */
+.input-field:enabled {
+    background-color: white;
+}
+
+
+
+/* Valid State */
+.input-field:valid {
+    border-color: var(--primary-color-1);
+    color: var(--primary-color-1);
+}
+
+
+/* Focus State */
+.input-field:focus {
+    color: var(--primary-color-1);
+    border-color: var(--primary-color-1);
+    outline: none;
+}
+
+/* Disabled State */
+.input-field:disabled {
+    border-color: var(--highlight-colors-1);
+    cursor: not-allowed;
+}
+
+/* Placeholder Text */
+.input-field::placeholder {
+    color: grey;
+    font-style: italic;
+}
+
+/* Invalid State */
+/* .input-field:required:invalid {
+    border-color: var(--error-color);
+} */
+
+.input-error {
+    color:var(--error-color);
+}

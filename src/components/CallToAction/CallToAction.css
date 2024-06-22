@@ -43,6 +43,9 @@ header > #header-photo-block {
     justify-content: center;
 }
 
+.empty-block {
+    display: none!important;
+}
 
 @media (min-width:320px)  {
     header {
@@ -82,9 +85,6 @@ header > #header-photo-block {
         width: 230px;
         height: 300px;
     }
-    .empty-block {
-        display: none;
-    }
 }
 @media (min-width:600px)  {
     /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
@@ -105,7 +105,7 @@ header > #header-photo-block {
     }
 }
 @media (min-width:801px)  {
-    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
     header {
         height: 417px;
         padding: 25px 10%;
@@ -132,7 +132,7 @@ header > #header-photo-block {
         margin-top: 0;
     }
     .empty-block {
-        display: block;
+        display: block!important;
     }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
