@@ -1,11 +1,15 @@
 import Footer from "src/components/Footer/Footer";
 import Nav from "src/components/Nav/Nav";
 import { useSearchParams, useNavigate, createSearchParams } from 'react-router-dom';
+import { useEffect } from "react";
 
 
 
 export default function ConfirmedBooking () {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo({top:0});
+  });
   const goToPrevStep = () => {
     const options = {
         pathname: '/booking',
