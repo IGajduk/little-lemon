@@ -77,7 +77,7 @@ const BookingPage = () => {
         }
       }
       , 1000);
-    }, [values.date, validateForm, handleChange, values.time]);
+    }, [values.date]);
 
     useEffect(() => {
       if (!response) return;
