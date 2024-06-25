@@ -17,10 +17,10 @@ const Chicago = () => (
         </p>
         <div className="pictures">
           <div className="picture-1">
-            <img src={MarioAndAdrian} alt="Photo of Adrian and Marion"/>
+            <img src={MarioAndAdrian} alt="Adrian and Marion"/>
           </div>
           <div className="picture-2">
-            <img src={SummerTerrace} alt="Photo of our Summer Terrace"/>
+            <img src={SummerTerrace} alt="Our Summer Terrace"/>
           </div>
         </div>
       </section>

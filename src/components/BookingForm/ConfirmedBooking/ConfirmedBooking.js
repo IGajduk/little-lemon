@@ -11,6 +11,7 @@ export default function ConfirmedBooking () {
         pathname: '/booking',
         search: `?${createSearchParams(currentObj)}`,
       };
+      localStorage.setItem('reservation-form', '{}');
     navigate(options, {replace: true});
   };
   const currentObj = JSON.parse(localStorage.getItem('reservation-form') || '{}');

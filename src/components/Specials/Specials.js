@@ -11,33 +11,33 @@ const Specials = () => (
         <h2 className="section-title">
           This week specials!
         </h2>
-        <button className="section-menu-button action-button">Online menu</button>
+        <button  aria-label="On Click" className="section-menu-button action-button">Online menu</button>
         <article className="product-item item-1">
           <div className="product-photo">
-            <img src={greekSaladPicture} alt="greek salad picture"/>
+            <img src={greekSaladPicture} alt="greek salad"/>
           </div>
           <h3 className="product-title">Greek salad</h3>
           <div className="product-price">$12.99</div>
           <p className="product-description">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. </p>
-          <a className="action">Order a delivery <img src={motocycleSVG}/></a>
+          <a className="action"  aria-label="On Click">Order a delivery <img src={motocycleSVG}/></a>
         </article>
         <article className="product-item item-2">
           <div className="product-photo">
-            <img src={bruschettaPicture} alt="greek salad picture"/>
+            <img src={bruschettaPicture} alt="greek salad"/>
           </div>
           <h3 className="product-title">Bruchetta</h3>
           <div className="product-price">$5.99</div>
           <p className="product-description">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.  </p>
-          <a className="action">Order a delivery <img src={motocycleSVG}/></a>
+          <a className="action"  aria-label="On Click">Order a delivery <img src={motocycleSVG}/></a>
         </article>
         <article className="product-item item-3">
           <div className="product-photo">
-            <img src={lemonDesertPicture} alt="lemon Desert Picture"/>
+            <img src={lemonDesertPicture} alt="Lemon Cake Desert"/>
           </div>
           <h3 className="product-title">Lemon Dessert</h3>
           <div className="product-price">$5.00</div>
           <p className="product-description">This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
-          <a className="action">Order a delivery <img src={motocycleSVG}/></a>
+          <a className="action"  aria-label="On Click">Order a delivery <img src={motocycleSVG}/></a>
         </article>
       </section>
     </>

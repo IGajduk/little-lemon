@@ -12,6 +12,8 @@ const InputField = ({
 }) => (
     <>
         <input
+            data-testid={fieldName + "-input-field"}
+            id={fieldName}
             className="input-field"
             type={type}
             style={errorMessage && {borderColor: 'var(--error-color)'}}

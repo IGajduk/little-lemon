@@ -32,7 +32,7 @@ export const fetchAPI = function(date) {
   let result = [];
   let random = seededRandom(date.getDate());
   const reservation = JSON.parse(localStorage.getItem('reservation-form'));
-  const notAvailableTime = formatDate(date) === reservation.date ? reservation.time : false;
+  const notAvailableTime = formatDate(date) === reservation?.date ? reservation?.time : false;
   for (let i = 17; i <= 23; i++) {
       if (random() < 0.5) {
           const timeToAdd = convertToAMPM(i + ':00');
@@ -52,4 +52,3 @@ export const fetchAPI = function(date) {
   export const submitAPI = function(formData) {
     return true;
   };
-  

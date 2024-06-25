@@ -28,7 +28,12 @@
     align-items: center;
 }
 
-
+.page-title {
+    font-family: 'Karla';
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--primary-color-1);
+}
 
 .submit > button {
     margin-top: 20px;
@@ -78,7 +83,8 @@
 }
 
 .reservation-form .time,
-.reservation-form .guests {
+.reservation-form .guests,
+.page-title {
     padding-left: 15px;
     position: relative;
 }
@@ -87,20 +93,15 @@
 .reservation-form .date,
 .reservation-form .email,
 .reservation-form .submit,
-.reservation-form .occasion {
+.reservation-form .occasion,
+.reservation-form .form-errors {
     margin-left: 15px;
     margin-right: 15px;
     position: relative;
 }
 
-.section-blocked {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   background-color: rgba(255, 255, 255, 0.5);
-   display: flex;
-   align-items: center;
-   justify-content: center;
+.input-error {
+    color:var(--error-color);
 }
 
 @media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
@@ -112,23 +113,30 @@
     .reservation-form .date,
     .reservation-form .email,
     .reservation-form .submit,
-    .reservation-form .occasion {
+    .reservation-form .occasion,
+    .reservation-form .form-errors {
         margin-left: 10%;
         margin-right: 10%;
+    }
+    .reservation-form .time,
+    .reservation-form .guests,
+    .page-title {
+        padding-left: 10%;
     }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
     .reservation-form .time,
-    .reservation-form .guests {
+    .reservation-form .guests,
+    .page-title {
         padding-left: var(--page-left-right-margins-for-1281px);
-        position: relative;
     }
 
     .reservation-form .name,
     .reservation-form .date,
     .reservation-form .email,
     .reservation-form .submit,
-    .reservation-form .occasion {
+    .reservation-form .occasion,
+    .reservation-form .form-errors {
         margin-left: var(--page-left-right-margins-for-1281px);
         margin-right: var(--page-left-right-margins-for-1281px);
         position: relative;

@@ -55,8 +55,7 @@ const TimePicker = ({
     range: [startTime, endTime],
     durationMinutes,
     onBlur,
-    isLoading,
-    initialValue
+    isLoading
 }) => {
     const selectionChanges = (e) => {
         onChange(e);
@@ -64,25 +63,23 @@ const TimePicker = ({
     const timeArray = createTimeArray(startTime, endTime, durationMinutes);
     const radioButtonsRow1 = [];
     const radioButtonsRow2 = [];
-        timeArray.forEach((time, index) => {
-            const isEven = ((index + 1) % 2) === 0;
-            const isChecked = selectedValue === time;
-            const isDisabled = !availableOptions.includes(time);
-            if (isDisabled && isChecked) {
-                // onChange({target: {value: initialValue, name: fieldName}});
-            }
-                (isEven ? radioButtonsRow2 : radioButtonsRow1).push(
-                    <label  data-testid={'button-' + time} className="r-item" key={'radio' + fieldName + time}>
-                        <input type="radio" name={fieldName} onBlur={onBlur} checked={isChecked} value={time} onChange={selectionChanges} disabled={isDisabled} />
-                        <span className="r-label">{time}</span>
-                    </label>
-                )
-        });
+    timeArray.forEach((time, index) => {
+        const forAttr = `${fieldName}-${time}`;
+        const isEven = ((index + 1) % 2) === 0;
+        const isChecked = selectedValue === time;
+        const isDisabled = isLoading || !(availableOptions || timeArray).includes(time);
+            (isEven ? radioButtonsRow2 : radioButtonsRow1).push(
+                <label htmlFor={forAttr} data-testid={'button-' + time} className={'r-item ' + (isDisabled ? '' : 'enbldR')} key={'radio' + fieldName + time}>
+                    <input id={forAttr} type="radio" name={fieldName} onBlur={onBlur} checked={isChecked} value={time} onChange={selectionChanges} disabled={isDisabled} />
+                    <span className="r-label">{time}</span>
+                </label>
+            )
+    });
 
     return (
         <>
             {isLoading && <div className='section-blocked'><span className='loader'></span></div>}
-            <label data-testid={sectionLabel + "-label"} htmlFor={fieldName} className='section-label'>{sectionLabel}</label>
+            <h3 data-testid={sectionLabel + "-label"} className='section-label'>{sectionLabel}</h3>
             <ScrollContainer nativeMobileScroll={true} style={{overflow: 'scroll'}}>
                 <fieldset>
                     <div className="time-picker">

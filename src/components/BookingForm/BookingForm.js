@@ -33,7 +33,8 @@ const ReservationForm = () => {
       touched,
       handleSubmit,
       resetForm,
-      initialValues
+      initialValues,
+      validateForm
     } = useFormik({
         initialValues: {
             name: currentObj.name || '',
@@ -58,7 +59,8 @@ const ReservationForm = () => {
             name: Yup.string().required('Plese, enter your name.'),
             email: Yup.string().email("Invalid email address").required("Please, enter your email."),
             date: Yup.string().required('Plese, select a Date.'),
-            time: Yup.string().required('Plese, select a time.'),
+            time: Yup.mixed().oneOf(availableTime.time, 'No available time for current date, please select another date.')
+            .required(availableTime.time.length ? 'Plese, select a time.' : 'No available time for current date, please select another date.'),
             guests: Yup.number().min(NUMBER_OF_GUESTS.min).max(NUMBER_OF_GUESTS.max).required('Please, select numer of guests'),
             occasion: Yup.string()
         })
@@ -70,10 +72,14 @@ const ReservationForm = () => {
       setAvailableTimes({time: [], isLoading: true});
       setTimeout(() => {
         const availableTimes = fetchAPI(values.date);
+        // setAvailableTimes({time: [], isLoading: false});
         setAvailableTimes({time: availableTimes, isLoading: false});
-        handleChange({target: {value: selectedTime, name: 'time'}});
+        if (availableTimes.includes(selectedTime)) {
+          handleChange({target: {value: selectedTime, name: 'time'}});
+          setTimeout(() => validateForm(), 1000);
+        }
       }
-      , 2000);
+      , 1000);
     }, [values.date]);
 
     useEffect(() => {
@@ -87,89 +93,97 @@ const ReservationForm = () => {
 
 
   return (
-    <form className='reservation-form'
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit(e);
-          }}
-    >
-        <div className='date'>
-          <label htmlFor='date' className='section-label'>DATE *</label>
-          <DateSelector
-            onChange={(e) => {handleChange({target: {value: new Date(e), name: 'date'}});}}
-            isLoading={availableTime.isLoading || isLoading}
-            selectedValue={values.date}
-            onBlur={handleBlur}
-             >
-            </DateSelector>
+    <>
+      <h1 className='page-title'>Table reservation</h1>
+      <form className='reservation-form'
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSubmit(e);
+            }}
+      >
+          <div className='date'>
+            <label htmlFor='date' className='section-label'>DATE *</label>
+            <DateSelector
+              onChange={(e) => {handleChange({target: {value: new Date(e), name: 'date'}});}}
+              isLoading={availableTime.isLoading || isLoading}
+              selectedValue={values.date}
+              onBlur={handleBlur}
+              >
+              </DateSelector>
+              {touched.date && errors.date && <p className='input-error'>{touched.date && errors.date}</p>}
+          </div>
+          <div className='time'>
+            <TimePicker
+              onChange={(e) => handleChange(e)}
+              selectedValue={values.time}
+              durationMinutes={30}
+              range={['2:00 PM', '10:00 PM']}
+              availableOptions={availableTime.time}
+              sectionLabel='TIME *'
+              fieldName='time'
+              onBlur={handleBlur}
+              isLoading={availableTime.isLoading || isLoading}
+            />
+            {touched.time && errors.time && <p className='input-error'>{touched.time && errors.time}</p>}
         </div>
-        <div className='time'>
-          <TimePicker
-            onChange={(e) => handleChange(e)}
-            selectedValue={values.time}
-            durationMinutes={30}
-            range={['2:00 PM', '10:00 PM']}
-            availableOptions={availableTime.time}
-            sectionLabel='TIME *'
-            fieldName='time'
+        <div className='guests'>
+          {isLoading && <div className='section-blocked'><span className='loader'></span></div>}
+          <HorizontalNumberSelector
+            selectedValue={values.guests}
+            fieldName='guests'
+            onChange={handleChange}
+            amountOfRadioButtons={14}
+            sectionLabel='NUMBER OF GUESTS *'
+            disabledOptions={[1, 2]}
             onBlur={handleBlur}
-            isLoading={availableTime.isLoading || isLoading}
-            initialValue={initialValues.time}
           />
-      </div>
-      <div className='guests'>
-        {isLoading && <div className='section-blocked'><span className='loader'></span></div>}
-        <HorizontalNumberSelector
-          selectedValue={values.guests}
-          fieldName='guests'
-          onChange={(e) => handleChange(e)}
-          amountOfRadioButtons={14}
-          sectionLabel='NUMBER OF GUESTS *'
-          disabledOptions={[2, 3]}
-          onBlur={handleBlur}
-        />
-      </div>
-      <div className='name'>
-        {isLoading && <div className='section-blocked'></div>}
-        <label htmlFor='name' className='section-label'>NAME *</label>
-        <InputField
-          fieldName='name'
-          selectedValue={values.name}
-          onChange={handleChange}
-          errorMessage={touched.name && errors.name}
-          required={true}
-          onBlur={handleBlur}
-        ></InputField>
-      </div>
-      <div className='email'>
-        {isLoading && <div className='section-blocked'></div>}
-        <label htmlFor='email' className='section-label'>@ EMAIL *</label>
-        <InputField
-          fieldName='email'
-          selectedValue={values.email}
-          onChange={handleChange}
-          errorMessage={touched.email && errors.email}
-          required={true}
-          onBlur={handleBlur}
-        ></InputField>
-      </div>
-      <div className='occasion'>
-        {isLoading && <div className='section-blocked'></div>}
-        <label htmlFor='occasion' className='section-label'>RESERVATION DETAILS (OPTIONAL)</label>
-        <TextAreaField
-          fieldName='occasion'
-          selectedValue={values.occasion}
-          onChange={handleChange}
-          errorMessage={touched.occasion && errors.occasion}
-          onBlur={handleBlur}
-        ></TextAreaField>
-      </div>
-      <div className="submit">
-        <button  className={`${isLoading && 'submit-loading'}`} type='submit' disabled={!Object.keys(touched)[0] || Object.keys(errors)[0] || isLoading}>
-          <span>Checkout</span>
-        </button>
-      </div>
-    </form>
+          {touched.guests && errors.guests && <p className='input-error'>{touched.guests && errors.guests}</p>}
+        </div>
+        <div className='name'>
+          {isLoading && <div className='section-blocked'></div>}
+          <label htmlFor='name' className='section-label'>NAME *</label>
+          <InputField
+            fieldName='name'
+            selectedValue={values.name}
+            onChange={handleChange}
+            errorMessage={touched.name && errors.name}
+            required={true}
+            onBlur={handleBlur}
+          ></InputField>
+        </div>
+        <div className='email'>
+          {isLoading && <div className='section-blocked'></div>}
+          <label htmlFor='email' className='section-label'>@ EMAIL *</label>
+          <InputField
+            fieldName='email'
+            selectedValue={values.email}
+            onChange={handleChange}
+            errorMessage={touched.email && errors.email}
+            required={true}
+            onBlur={handleBlur}
+          ></InputField>
+        </div>
+        <div className='occasion'>
+          {isLoading && <div className='section-blocked'></div>}
+          <label htmlFor='occasion' className='section-label'>RESERVATION DETAILS (OPTIONAL)</label>
+          <TextAreaField
+            fieldName='occasion'
+            selectedValue={values.occasion}
+            onChange={handleChange}
+            errorMessage={touched.occasion && errors.occasion}
+            onBlur={handleBlur}
+          ></TextAreaField>
+        </div>
+        {<ul className="text-a-error form-errors">
+          {Object.keys(touched)[0] && Object.values(errors).map((value) => <li key={'form-errors' + value}>{value}</li>)}
+        </ul>}
+        <div className="submit">
+          <button data-testid={'submit-button'} className={`${isLoading && 'submit-loading'}`} type='submit' disabled={Object.keys(errors)[0] || isLoading}>
+            <span>Checkout</span>
+          </button>
+        </div>
+      </form>
+    </>
   );
 }
 

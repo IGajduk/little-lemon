@@ -16,7 +16,7 @@ const CustomerSay = () => (
             <i className="star"></i>
           </div>
           <div className="person-photo-block">
-            <img src={ladyPhoto} alt="person picture"/>
+            <img src={ladyPhoto} alt="review person"/>
           </div>
           <h5 className="person-name">Raychel</h5>
           <div className="review-date">2 months ago</div>
@@ -26,7 +26,7 @@ const CustomerSay = () => (
         </article>
         <article className="review-item review-2">
           <div className="person-photo-block">
-            <img src={teenagerPhoto} alt="person picture"/>
+            <img src={teenagerPhoto} alt="review person"/>
           </div>
           <h5 className="person-name">Hao</h5>
           <div className="review-date">3 weeks ago</div>
@@ -43,7 +43,7 @@ const CustomerSay = () => (
         </article>
         <article className="review-item review-3">
           <div className="person-photo-block">
-            <img src={mamPhoto} alt="person picture"/>
+            <img src={mamPhoto} alt="review person"/>
           </div>
           <h5 className="person-name">Nana</h5>
           <div className="review-date">1 week ago</div>
@@ -60,7 +60,7 @@ const CustomerSay = () => (
         </article>
         <article className="review-item review-4">
           <div className="person-photo-block">
-            <img src={youngManPhoto} alt="person picture"/>
+            <img src={youngManPhoto} alt="review person"/>
           </div>
           <h5 className="person-name">Jose</h5>
           <div className="review-date">yesterday</div>

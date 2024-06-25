@@ -13,13 +13,13 @@ function CallToAction() {
             We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
             </p>
           <Link to="/booking">
-            <button className='action-button'>
+            <button className='action-button' aria-label="On Click">
               Reserve a table
             </button>
           </Link>
           <div className='empty-block'></div>
           <section id="header-photo-block">
-            <img src={HeaderPicture} alt="Photo of attractive bruskets on the black board"/>
+            <img src={HeaderPicture} alt="Attractive bruskets on the black board"/>
           </section>
       </header>
     </>

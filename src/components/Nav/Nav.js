@@ -8,14 +8,14 @@ function Nav() {
     <>
       <nav>
         <img id="menu-button" src={menuIcon} alt="menu icon" />
-        <img id="header-logo" src={logo} alt='Websito logo image'/>
+        <img id="header-logo" src={logo} alt='Website logo'/>
         <ul>
-          <li><a href='/' role='navigation'>Home</a></li>
-          <li><a href='/' role='navigation'>About</a></li>
-          <li><a href='/' role='navigation'>Menu</a></li>
-          <li><a href='/' role='navigation'>Reservations</a></li>
-          <li><a href='/' role='navigation'>Order online</a></li>
-          <li><a href='/' role='navigation'>Login</a></li>
+          <li><a href='/' role='navigation' aria-label="On Click">Home</a></li>
+          <li><a href='/' role='navigation' aria-label="On Click">About</a></li>
+          <li><a href='/' role='navigation' aria-label="On Click">Menu</a></li>
+          <li><a href='/' role='navigation' aria-label="On Click">Reservations</a></li>
+          <li><a href='/' role='navigation' aria-label="On Click">Order online</a></li>
+          <li><a href='/' role='navigation' aria-label="On Click">Login</a></li>
         </ul>
         <img id="basket-button" src={basketIcon} alt="menu icon" />
       </nav>

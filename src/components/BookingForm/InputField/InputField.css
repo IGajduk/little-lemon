@@ -64,7 +64,3 @@
 /* .input-field:required:invalid {
     border-color: var(--error-color);
 } */
-
-.input-error {
-    color:var(--error-color);
-}

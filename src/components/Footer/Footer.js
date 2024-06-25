@@ -6,7 +6,7 @@ import Logo from 'src/assets/images/logo-footer.png';
 const Footer = () => (
     <>
       <footer>
-        <img src={Logo} alt="Logo footer, picture of lemon with text little lemon"/>
+        <img src={Logo} alt="Logo footer, lemon with text little lemon"/>
         <ul>
           <h6>Doormat Navigation</h6>
           <li><a href='/' role='navigation'>Home</a></li>
