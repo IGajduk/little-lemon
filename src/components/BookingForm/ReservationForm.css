@@ -28,7 +28,7 @@
     align-items: center;
 }
 
-.page-title {
+.reservation-form .page-title {
     font-family: 'Karla';
     font-size: 40px;
     font-weight: 600;
@@ -84,7 +84,7 @@
 
 .reservation-form .time,
 .reservation-form .guests,
-.page-title {
+.reservation-form .page-title {
     padding-left: 15px;
     position: relative;
 }
@@ -120,14 +120,14 @@
     }
     .reservation-form .time,
     .reservation-form .guests,
-    .page-title {
+    .reservation-form .page-title {
         padding-left: 10%;
     }
 }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
     .reservation-form .time,
     .reservation-form .guests,
-    .page-title {
+    .reservation-form .page-title {
         padding-left: var(--page-left-right-margins-for-1281px);
     }
 

@@ -40,7 +40,7 @@ const ReservationForm = () => {
             name: currentObj.name || '',
             date: currentObj.date ? new Date(currentObj.date) : new Date(),
             time: currentObj.time || '',
-            guests: currentObj.guests || 1,
+            guests: currentObj.guests || 4,
             occasion: currentObj.occasion || '',
             email: currentObj.email || ''
         },
@@ -60,8 +60,9 @@ const ReservationForm = () => {
             email: Yup.string().email("Invalid email address").required("Please, enter your email."),
             date: Yup.string().required('Plese, select a Date.'),
             time: Yup.mixed().oneOf(availableTime.time, 'No available time for current date, please select another date.')
-            .required(availableTime.time.length ? 'Plese, select a time.' : 'No available time for current date, please select another date.'),
-            guests: Yup.number().min(NUMBER_OF_GUESTS.min).max(NUMBER_OF_GUESTS.max).required('Please, select numer of guests'),
+              .required(availableTime.time.length ? 'Plese, select a time.' : 'No available time for current date, please select another date.'),
+            guests: Yup.number().oneOf([3,4,5,6,7,8,9,10,11,12,13,14], 'Tables for this amount of guests are not available for this date.')
+              .min(NUMBER_OF_GUESTS.min).max(NUMBER_OF_GUESTS.max).required('Please, select numer of guests'),
             occasion: Yup.string()
         })
     });
@@ -94,15 +95,15 @@ const ReservationForm = () => {
 
   return (
     <>
-      <h1 className='page-title'>Table reservation</h1>
       <form className='reservation-form'
             onSubmit={(e) => {
               e.preventDefault();
               handleSubmit(e);
             }}
       >
+      <h1 className='page-title'>Table reservation</h1>
           <div className='date'>
-            <label htmlFor='date' className='section-label'>DATE *</label>
+            <label htmlFor='date' className='section-label'>Date *</label>
             <DateSelector
               onChange={(e) => {handleChange({target: {value: new Date(e), name: 'date'}});}}
               isLoading={availableTime.isLoading || isLoading}
@@ -119,7 +120,7 @@ const ReservationForm = () => {
               durationMinutes={30}
               range={['2:00 PM', '10:00 PM']}
               availableOptions={availableTime.time}
-              sectionLabel='TIME *'
+              sectionLabel='Time *'
               fieldName='time'
               onBlur={handleBlur}
               isLoading={availableTime.isLoading || isLoading}
@@ -133,7 +134,7 @@ const ReservationForm = () => {
             fieldName='guests'
             onChange={handleChange}
             amountOfRadioButtons={14}
-            sectionLabel='NUMBER OF GUESTS *'
+            sectionLabel='Number Of Guests *'
             disabledOptions={[1, 2]}
             onBlur={handleBlur}
           />
@@ -141,7 +142,7 @@ const ReservationForm = () => {
         </div>
         <div className='name'>
           {isLoading && <div className='section-blocked'></div>}
-          <label htmlFor='name' className='section-label'>NAME *</label>
+          <label htmlFor='name' className='section-label'>Name *</label>
           <InputField
             fieldName='name'
             selectedValue={values.name}
@@ -153,7 +154,7 @@ const ReservationForm = () => {
         </div>
         <div className='email'>
           {isLoading && <div className='section-blocked'></div>}
-          <label htmlFor='email' className='section-label'>@ EMAIL *</label>
+          <label htmlFor='email' className='section-label'>@ Email *</label>
           <InputField
             fieldName='email'
             selectedValue={values.email}
@@ -165,7 +166,7 @@ const ReservationForm = () => {
         </div>
         <div className='occasion'>
           {isLoading && <div className='section-blocked'></div>}
-          <label htmlFor='occasion' className='section-label'>RESERVATION DETAILS (OPTIONAL)</label>
+          <label htmlFor='occasion' className='section-label'>Reservation details (Optional)</label>
           <TextAreaField
             fieldName='occasion'
             selectedValue={values.occasion}
