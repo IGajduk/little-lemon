@@ -1,12 +1,17 @@
 /* Hide the default radio button */
 .time-picker .r-item input[type="radio"] {
-    display: none;
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    z-index: -10;
+    opacity: 0.1;
 }
 
 /* Style the container of the custom radio button */
 .time-picker .r-item {
     display: inline-block;
     margin: 5px;
+    position: relative;
 }
 
 .time-picker .r-item:last-child {
@@ -47,6 +52,9 @@
     border: 4px solid var(--highlight-colors-2);
     color: white;
     line-height: 32px;
+}
+.time-picker .r-item input[type="radio"]:focus + .r-label {
+    outline: 4px solid yellow;
 }
 
 .time-picker {

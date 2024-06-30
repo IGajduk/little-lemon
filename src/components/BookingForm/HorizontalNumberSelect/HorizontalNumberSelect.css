@@ -1,12 +1,17 @@
 /* Hide the default radio button */
 .horizontal-number-select .r-item input[type="radio"] {
-    display: none;
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    z-index: -10;
+    opacity: 0.1;
 }
 
 /* Style the container of the custom radio button */
 .horizontal-number-select .r-item {
     display: inline-block;
     margin: 10px;
+    position: relative;
 }
 
 .horizontal-number-select .r-item:last-child {
@@ -29,7 +34,7 @@
     transition: all 0.3s ease;
 }
 
-.horizontal-number-select .r-item:last-child {
+.horizontal-number-select button:last-child {
     padding-right: 40px;
 }
 
@@ -48,6 +53,9 @@
     height: 80px;
     line-height: 80px;
     font-size: 32px;
+}
+.horizontal-number-select .r-item input[type="radio"]:focus + .r-label {
+    outline: 4px solid yellow;
 }
 
 .horizontal-number-select {
